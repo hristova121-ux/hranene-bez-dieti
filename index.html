@@ -113,7 +113,8 @@ p{margin:0}
 .story h3{font-size:26px}
 .ph{height:10px;background:var(--line)}
 .ph.s{width:60%}
-.story-quote{margin-top:26px;background:var(--tint);padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.story p{font-size:16px}
+.story-who{margin-top:6px;padding-top:14px;border-top:1px solid var(--line);font-family:var(--font-display);font-size:22px;color:var(--ink)}
 
 /* ===== 03 НИЩО НЕ Е ЗАБРАНЕНО ===== */
 .yes4{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -158,8 +159,10 @@ p{margin:0}
 /* ===== 06 ОТЗИВИ (места за истински) ===== */
 .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 @media (max-width:760px){.reviews{grid-template-columns:1fr}}
-.review{border:1px dashed var(--muted);background:var(--white);padding:22px;display:flex;flex-direction:column;gap:12px;min-height:180px}
-.review .who-r{margin-top:auto;font-size:13.5px;color:var(--muted)}
+.review{margin:0;border:1px solid var(--line);background:var(--white);padding:24px;display:flex;flex-direction:column;gap:16px}
+.review blockquote{margin:0;font-size:16px;line-height:1.55;color:var(--text)}
+.review .who-r{margin-top:auto;font-size:14.5px;color:var(--muted);padding-top:12px;border-top:1px solid var(--line)}
+.review .who-r b{font-family:var(--font-display);font-weight:400;font-size:22px;color:var(--ink)}
 .note{font-size:13.5px;color:var(--muted);margin-top:14px}
 
 /* ===== 07 ЦЕНА (в центъра) ===== */
@@ -260,17 +263,13 @@ footer a{color:inherit}
         <li><span class="x" aria-hidden="true"></span>без добавки</li>
         <li><span class="x" aria-hidden="true"></span>без чувство за вина</li>
       </ul>
-      <div class="cta">
-        <a class="btn js-buy" id="top-btn" href="#cena">Искам да направя промяната</a>
-        <span class="under">25% отстъпка <b>за първите 30</b></span>
-      </div>
     </div>
   </div>
   <div class="wrap">
     <div class="grid3">
-      <figure><img src="img/chinia.jpg" alt="Балансирана чиния" loading="lazy" width="800" height="800"><figcaption><b>Чинията за 2 минути</b><span>Длан, юмрук, шепа и палец. Мериш с ръката си, без везна и таблици.</span></figcaption></figure>
-      <figure><img src="img/spisak.jpg" alt="Списък за пазар на хладилника" loading="lazy" width="800" height="800"><figcaption><b>Менюта и списъци за пазар</b><span>Три седмични менюта с продукти от обикновения магазин.</span></figcaption></figure>
-      <figure><img src="img/telefon.jpg" alt="Снимка на чиния с телефон" loading="lazy" width="800" height="800"><figcaption><b>Лична обратна връзка</b><span>Снимаш чинията си в групата, а Алекс ти казва какво да подобриш.</span></figcaption></figure>
+      <figure><img src="img/chinia.jpg" alt="Балансирана чиния" loading="lazy" width="800" height="800"><figcaption><b>Изгради чинията си за две минути</b><span>Мериш визуално, без везна и таблици.</span></figcaption></figure>
+      <figure><img src="img/spisak.jpg" alt="Списък за пазар на хладилника" loading="lazy" width="800" height="800"><figcaption><b>Менюта и списъци за пазар</b><span>Седмични менюта с продукти от кварталния магазин.</span></figcaption></figure>
+      <figure><img src="img/telefon.jpg" alt="Снимка на чиния с телефон" loading="lazy" width="800" height="800"><figcaption><b>Лична обратна връзка</b><span>Снимаш чинията си, а Алекс ти казва какво и как да подобриш.</span></figcaption></figure>
     </div>
     <p class="swipe">Плъзни настрани за още</p>
   </div>
@@ -296,8 +295,8 @@ footer a{color:inherit}
         <ul>
           <li><span class="v" aria-hidden="true"></span>пробвала си всичко, издържаш две седмици и после се сриваш</li>
           <li><span class="v" aria-hidden="true"></span>вечер не можеш без нещо сладко и после се обвиняваш</li>
-          <li><span class="v" aria-hidden="true"></span>искаш да ядеш нормална храна със семейството, а не отделно „диетично“</li>
-          <li><span class="v" aria-hidden="true"></span>искаш резултат, който остава, а не поредния режим</li>
+          <li><span class="v" aria-hidden="true"></span>искаш да се храниш вкусно със семейството си, без да готвиш отделно за себе си</li>
+          <li><span class="v" aria-hidden="true"></span>искаш резултат, който остава във времето и създава устойчиви навици, а не поредния режим</li>
         </ul>
       </div>
     </div>
@@ -305,32 +304,29 @@ footer a{color:inherit}
 </section>
 
 <!-- ===== 02 ИСТОРИЯ НА КЛИЕНТКА ===== -->
-<!-- МЯСТО ЗА ИСТИНСКА ИСТОРИЯ: с позволение на жената. Не се измисля. Име, възраст, град; преди / 21-те дни / днес. -->
+<!-- История на клиентка (дадена от Алекс). -->
 <section class="sec">
   <div class="wrap">
     <hr class="rule">
-    <div class="sec-head"><span class="num">02</span><h2>Как [Име] промени навиците си и влезе във форма за 21 дни</h2></div>
+    <div class="sec-head"><span class="num">02</span><h2>Как Деси промени навиците си и влезе във форма за 21 дни</h2></div>
     <div class="story">
       <div>
         <span class="step">Преди</span>
         <h3>Диета след диета</h3>
-        <div class="ph"></div><div class="ph"></div><div class="ph s"></div>
+        <p>Кратковременни резултати, здравословни проблеми от постоянните лишения и чувство за провал и недоволство след всеки нов режим.</p>
       </div>
       <div>
         <span class="step">21-те дни</span>
         <h3>Какво направи различно</h3>
-        <div class="ph"></div><div class="ph"></div><div class="ph s"></div>
+        <p>Разбра, че може да яде всичко, без лишения и ограничения. Научи се да сглобява чинията си така, че тя да работи за нейния прогрес.</p>
       </div>
       <div>
         <span class="step">Днес</span>
         <h3>Две години по-късно</h3>
-        <div class="ph"></div><div class="ph"></div><div class="ph s"></div>
+        <p>Поддържа желаната форма с лекота, спокойно се храни в ресторанти и не качва килограми по време на почивка.</p>
       </div>
     </div>
-    <div class="story-quote">
-      <div class="ph"></div><div class="ph s"></div>
-      <span class="under">[Име], [възраст], [град]</span>
-    </div>
+    <p class="story-who">Деси, 37 г., Ловеч</p>
   </div>
 </section>
 
@@ -339,11 +335,11 @@ footer a{color:inherit}
   <div class="wrap">
     <hr class="rule">
     <div class="sec-head"><span class="num">03</span><h2>Нищо не е забранено</h2></div>
-    <p class="lead" style="margin-bottom:24px">Не ти забраняваме сладкото, хляба или вечерята навън. Учим те как и кога, така че да не ти се налага да избираш между живота и формата си.</p>
+    <p class="lead" style="margin-bottom:24px">Не ти забранявам сладкото, хляба или вечерята навън. Уча те как и кога, така че да не ти се налага да избираш между живота и формата си.</p>
     <div class="yes4">
-      <div><span class="da">Да</span><h3>на сладкото</h3><p>Дори вечер. Научаваш се кога и колко, без да се сриваш на следващия ден.</p></div>
-      <div><span class="da">Да</span><h3>на хляба и въглехидратите</h3><p>Шепа във всяко основно хранене. Те ти дават енергия, не са враг.</p></div>
-      <div><span class="da">Да</span><h3>на ресторанта и гостите</h3><p>Сглобяваш чинията си с ръка навсякъде, без везна и без обяснения.</p></div>
+      <div><span class="da">Да</span><h3>на сладкото</h3><p>Дори вечер. Научаваш се кога и колко, без да се проваляш на следващия ден.</p></div>
+      <div><span class="da">Да</span><h3>на въглехидратите</h3><p>Достатъчно количество във всяко основно хранене. Те ти дават енергия, не са враг.</p></div>
+      <div><span class="da">Да</span><h3>на ресторанта и гостите</h3><p>Сглобяваш чинията си с лекота навсякъде, без везна и без обвинения.</p></div>
       <div><span class="da">Да</span><h3>на един свободен ден</h3><p>Ритъмът 6+1: шест дни по метода и един ден без никакви правила.</p></div>
     </div>
     <p class="secret">Тайната не е в забраните, а в <em>чинията</em>.</p>
@@ -363,7 +359,7 @@ footer a{color:inherit}
       <div class="main">
         <span class="kicker">Основното</span>
         <h3>21-дневната система „Хранене без диети“</h3>
-        <p>План ден по ден: по една задача и една малка победа на ден. На 21-вия ден имаш своята система за хранене на един лист.</p>
+        <p>План ден по ден: по една задача и една малка победа на ден. На 21-вия ден имаш своята система за хранене, която изпълняваш с лекота.</p>
         <ul>
           <li><span class="v" aria-hidden="true"></span>Методът на чинията (PDF + видео)</li>
           <li><span class="v" aria-hidden="true"></span>Ритъмът 6+1 със свободния ден</li>
@@ -372,11 +368,11 @@ footer a{color:inherit}
         </ul>
       </div>
       <ul class="bonuses">
-        <li><span class="tag">Бонус 1</span><div><b>30 замени</b><span>За сладкото след вечеря, хляба, пицата, бързата храна на работа.</span></div></li>
-        <li><span class="tag">Бонус 2</span><div><b>3 седмични менюта и списъци за пазар</b><span>Седмицата ти е готова за 15 минути, с продукти от обикновения магазин.</span></div></li>
-        <li><span class="tag">Бонус 3</span><div><b>30 рецепти до 20 минути</b><span>Включително баница, мусака и палачинки в по-лек вариант.</span></div></li>
+        <li><span class="tag">Бонус 1</span><div><b>30 идеи за здравословни алтернативи</b><span>За сладкото след вечеря, хляба, пицата, бързата храна на работа.</span></div></li>
+        <li><span class="tag">Бонус 2</span><div><b>3 седмични менюта и списъци за пазар</b><span>Седмицата ти е готова за 15 минути, с продукти от кварталния магазин.</span></div></li>
+        <li><span class="tag">Бонус 3</span><div><b>30 рецепти за 20 минути</b><span>Включително баница, мусака и палачинки в по-лек вариант.</span></div></li>
         <li><span class="tag">Бонус 4</span><div><b>Ръководство „Навън“</b><span>Как да се храниш на ресторант, на гости, на работа и на път.</span></div></li>
-        <li><span class="tag">Бонус 5</span><div><b>30 дни в закритата група с Алекс</b><span>Всеки вторник Алекс разглежда чинии от групата, всеки четвъртък има лайв „Питай Алекс“.</span></div></li>
+        <li><span class="tag">Бонус 5</span><div><b>30 дни в закритата група с Алекс</b><span>Всеки вторник Алекс разглежда чинии от групата и отговаря на въпросите ти.</span></div></li>
       </ul>
     </div>
     <div class="notin">
@@ -416,13 +412,13 @@ footer a{color:inherit}
   <div class="wrap">
     <hr class="rule">
     <div class="sec-head"><span class="num">06</span><h2>Какво казват жените</h2></div>
-    <!-- МЕСТА ЗА ИСТИНСКИ ОТЗИВИ: 2 изречения, първо име и град, с позволение. Не се измислят. -->
+    <!-- Отзиви от клиентки (дадени от Алекс, с тяхно позволение). -->
     <div class="reviews">
-      <div class="review"><div class="ph"></div><div class="ph"></div><div class="ph s"></div><span class="who-r">[Име], [град]</span></div>
-      <div class="review"><div class="ph"></div><div class="ph"></div><div class="ph s"></div><span class="who-r">[Име], [град]</span></div>
-      <div class="review"><div class="ph"></div><div class="ph"></div><div class="ph s"></div><span class="who-r">[Име], [град]</span></div>
+      <figure class="review"><blockquote>„Още през първия месец свалих 5,5 см от талията, 2 см от бедрото, 5,5 см от ханша и 4,2 кг. Вече 7 месеца подобрявам резултатите си и се чувствам все по-добре.“</blockquote><figcaption class="who-r"><b>Катрин</b>, София</figcaption></figure>
+      <figure class="review"><blockquote>„През първите 7 дни свалих 1,3 кг, талията ми намаля с 1,5 см, ханшът с 1 см, а бедрото с 0,5 см. Постигнах го с 5 хранения на ден.“</blockquote><figcaption class="who-r"><b>Лилия</b>, Ихтиман</figcaption></figure>
+      <figure class="review"><blockquote>„Съвсем в началото съм, но вече съм пристрастена към резултатите. През първата седмица свалих 1,15 кг, талията ми намаля с 4 см, бедрото с 2 см, а ханшът с 2 см.“</blockquote><figcaption class="who-r"><b>Мария</b>, Шумен</figcaption></figure>
     </div>
-    <p class="note">Място за отзиви от клиентки на Алекс, с тяхно позволение.</p>
+    <p class="note">Резултатите са лични и зависят от всяка жена.</p>
   </div>
 </section>
 
@@ -575,8 +571,8 @@ footer a{color:inherit}
     if (PAY_URL) location.href = PAY_URL;
   });
 
-  // лепкавият бутон се показва на телефон, след като горният бутон излезе от екрана, и се скрива при цената
-  var st = document.getElementById('sticky'), top = document.getElementById('top-btn'), price = document.getElementById('cena');
+  // лепкавият бутон се показва на телефон, след като списъкът „без…“ горе излезе от екрана, и се скрива при цената
+  var st = document.getElementById('sticky'), top = document.querySelector('.withouts'), price = document.getElementById('cena');
   if (!('IntersectionObserver' in window)) return;
   var topVis = true, priceVis = false;
   function upd(){ st.classList.toggle('show', !topVis && !priceVis); }
