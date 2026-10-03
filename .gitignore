@@ -1,0 +1,10 @@
+# В GitHub (и във Vercel) отиват само страницата и снимките, които тя ползва.
+/*
+!/index.html
+!/img/
+/img/*
+!/img/hero.jpg
+!/img/chinia.jpg
+!/img/spisak.jpg
+!/img/telefon.jpg
+!/.gitignore
