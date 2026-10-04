@@ -344,7 +344,7 @@ footer a{color:inherit}
     </div>
     <p class="secret">Тайната не е в забраните, а в <em>чинията</em>.</p>
     <div class="cta center" style="margin-top:30px">
-      <a class="btn js-buy" href="#cena">Искам да направя промяната</a>
+      <a class="btn js-buy" id="secret-btn" href="#cena">Вземи 25% отстъпка сега</a>
       <span class="under">25% отстъпка за първите 30, после цената е 39 €.</span>
     </div>
   </div>
@@ -472,10 +472,6 @@ footer a{color:inherit}
       <details><summary>Трябва ли да тренирам?</summary><p>Не. Ако тренираш, чудесно. Ако не, чинията е това, което променя нещата.</p></details>
       <details><summary>Какво точно получавам?</summary><p>Цялата система: 21 дни план, замени, менюта, рецепти, пет видеа от Алекс и 30 дни в групата, където всеки вторник Алекс разглежда чинии.</p></details>
     </div>
-    <div class="cta center" style="margin-top:40px">
-      <a class="btn js-buy" href="#cena">Искам да направя промяната</a>
-      <span class="under">25% отстъпка за първите 30, после цената е 39 €.</span>
-    </div>
   </div>
 </section>
 
@@ -532,6 +528,7 @@ footer a{color:inherit}
     document.body.classList.add('has-discount');
     document.getElementById('sticky-p').innerHTML = '<b>29 €</b>вместо 39 €';
     document.getElementById('sticky-btn').textContent = 'Искам да направя промяната';
+    document.getElementById('secret-btn').textContent = 'Искам да направя промяната';
     document.getElementById('d-name').textContent = lead && lead.name ? ', ' + lead.name : '';
     if (lead && lead.email) document.getElementById('d-mail').textContent = lead.email;
     modal.classList.add('is-done');
