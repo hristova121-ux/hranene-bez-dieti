@@ -342,9 +342,9 @@ footer a{color:inherit}
         <li><span class="v" aria-hidden="true"></span>След 21-те дни можеш да останеш в групата с абонамент от 19 € на месец, който спираш, когато пожелаеш</li>
       </ul>
       <div class="deal">
-        <span class="badge">25% отстъпка само за първите 30</span>
+        <span class="badge" id="o-badge">25% отстъпка само за първите 30</span>
         <a class="btn" href="/">Искам да направя промяната</a>
-        <span class="under">След първите 30 цената става 39 €.</span>
+        <span class="under" id="o-under">След първите 30 цената става 39 €.</span>
       </div>
     </div>
 
@@ -361,7 +361,7 @@ footer a{color:inherit}
 </footer>
 
 <div class="sticky" id="sticky" aria-hidden="true">
-  <span class="p"><b>−25%</b>за първите 30</span>
+  <span class="p" id="sticky-p"><b>−25%</b>за първите 30</span>
   <a class="btn" href="/" tabindex="-1">Искам да направя промяната</a>
 </div>
 
@@ -378,6 +378,17 @@ footer a{color:inherit}
     st.classList.toggle('show', past && !offerVis);
   }
   addEventListener('scroll', upd, { passive: true }); upd();
+
+  // колко места на 29 € остават (сървърът брои плащанията в Stripe); след 30-те — само 39 €
+  fetch('/api/oferta').then(function(r){ return r.json(); }).then(function(o){
+    if (o.ostavat === 0) {
+      document.getElementById('o-badge').style.display = 'none';
+      document.getElementById('o-under').textContent = 'Цена: 39 €. Материалите остават твои завинаги.';
+      document.getElementById('sticky-p').innerHTML = '<b>39 €</b>21-дневна система';
+    } else if (o.ostavat > 0) {
+      document.getElementById('o-under').innerHTML = 'Остават <b>' + o.ostavat + ' от 30</b> места на 29 €. След това цената става 39 €.';
+    }
+  }).catch(function(){});
 
   var btns = document.querySelectorAll('#signs button'), res = document.getElementById('result');
   var msg = [

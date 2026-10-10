@@ -16,3 +16,6 @@
 !/obshti-usloviya/
 !/poveritelnost/
 !/biskvitki/
+!/api/
+/api/__pycache__/
+!/vercel.json
