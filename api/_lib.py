@@ -110,7 +110,7 @@ def bg_date(d):
 # ---------- имейли ----------
 def send_mail(to, subject, paragraphs, button=None):
     """Изпраща имейл от Gmail на групата. paragraphs: списък от редове (HTML е позволен)."""
-    user, pw = env('GMAIL_USER'), env('GMAIL_APP_PASSWORD').replace(' ', '')
+    user, pw = env('GMAIL_USER'), ''.join(env('GMAIL_APP_PASSWORD').split())  # без интервали (и „невидимите“ от копирането)
     if not (user and pw and to):
         return False
     btn = ''
@@ -136,10 +136,26 @@ def send_mail(to, subject, paragraphs, button=None):
     m['Reply-To'] = user
     m.attach(MIMEText(text, 'plain', 'utf-8'))
     m.attach(MIMEText(html, 'html', 'utf-8'))
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=ssl.create_default_context(), timeout=20) as s:
-        s.login(user, pw)
-        s.sendmail(user, [to], m.as_string())
-    return True
+    msg = m.as_string()
+    errors = []
+    for port in (465, 587):  # ако 465 откаже, пробва 587 (STARTTLS)
+        stage = 'connect'
+        try:
+            if port == 465:
+                s = smtplib.SMTP_SSL('smtp.gmail.com', 465, context=ssl.create_default_context(), timeout=20)
+            else:
+                s = smtplib.SMTP('smtp.gmail.com', 587, timeout=20)
+                s.ehlo()
+                s.starttls(context=ssl.create_default_context())
+            with s:
+                stage = 'login'
+                s.login(user, pw)
+                stage = 'send'
+                s.sendmail(user, [to], msg)
+            return True
+        except Exception as e:
+            errors.append(f'{port} {stage}: {type(e).__name__}: {e}')
+    raise RuntimeError(' | '.join(errors))
 
 
 def aleks():
