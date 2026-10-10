@@ -149,7 +149,12 @@ def send_mail(to, subject, paragraphs, button=None):
                 s.starttls(context=ssl.create_default_context())
             with s:
                 stage = 'login'
-                s.login(user, pw)
+                # само AUTH PLAIN: s.login() след отказ пробва LOGIN, Gmail затваря връзката и истинската грешка се губи
+                s.ehlo_or_helo_if_needed()
+                s.user, s.password = user, pw
+                code, resp = s.auth('PLAIN', s.auth_plain)
+                if code not in (235, 503):
+                    raise smtplib.SMTPAuthenticationError(code, resp)
                 stage = 'send'
                 s.sendmail(user, [to], msg)
             return True
